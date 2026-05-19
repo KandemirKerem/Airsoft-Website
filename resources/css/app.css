@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* Özel Font Tanımlama */
+    --font-sans: 'Inter', sans-serif;
+
+    /* Özel Renk Tanımlamaları */
+    --color-dark: #131517;
+    --color-card: #222629;
+    --color-hero: #222a1f;
+    --color-heroBorder: #394d2c;
+    --color-accent: #8db93d;
+    --color-btnBg: #3f4f31;
+    --color-priceBg: #476326;
+    --color-inputBg: #1e251b;
+    --color-lightGray: #d0d3d4;
+}
+
+/* Head içindeki düz CSS kurallarını da buraya taşımak en doğrusudur */
+body {
+    background-color: #16181a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Custom Hexagon Background Pattern for Hero */
+.hero-pattern {
+    background-image: radial-gradient(#4a6b36 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.15;
+}
