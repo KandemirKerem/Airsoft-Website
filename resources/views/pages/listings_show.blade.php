@@ -1,8 +1,8 @@
 <x-layout>
     <x-slot:title>
-        Anasayfa
+        show
     </x-slot:title>
 
-    <x-listings.main></x-listings.main>
+    <x-listings_show.main/>
 
 </x-layout>
