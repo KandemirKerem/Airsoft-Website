@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - AirsoftSatis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#131517',
+                        card: '#222629',
+                        hero: '#222a1f',
+                        heroBorder: '#394d2c',
+                        accent: '#8db93d',
+                        btnBg: '#3f4f31',
+                        priceBg: '#476326',
+                        inputBg: '#1e251b',
+                        lightGray: '#d0d3d4',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #16181a; color: white; font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #16181a; }
+        ::-webkit-scrollbar-thumb { background: #3f4f31; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8db93d; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <header class="bg-dark/95 border-b border-gray-800 sticky top-0 z-50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-crosshairs text-accent text-2xl"></i>
+                <a href="anasayfa.html" class="text-xl font-extrabold tracking-wider text-white">AIRSOFT<span class="text-accent">SATIS</span></a>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="anasayfa.html" class="hover:text-accent transition-colors">Anasayfa</a>
+                <a href="ilanlar.html" class="hover:text-accent transition-colors">İlanlar</a>
+                <a href="topluluk.html" class="hover:text-accent transition-colors">Topluluk</a>
+                <a href="hakkimizda.html" class="hover:text-accent transition-colors">Hakkımızda</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Giriş Yap</a>
+                <a href="kayit.html" class="bg-accent hover:bg-opacity-90 text-dark font-semibold text-xs px-4 py-2 rounded transition-all tracking-wide shadow-lg shadow-accent/10">Kayıt Ol</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8 bg-gradient-to-b from-dark to-[#16181a]">
+        <div class="max-w-md w-full space-y-8 bg-card p-8 rounded-xl border border-gray-800 shadow-2xl">
+            
+            <div class="text-center">
+                <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-hero border border-heroBorder mb-4 text-accent text-2xl shadow-inner">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-white">Aramıza Katıl</h2>
+                <p class="mt-2 text-sm text-gray-400">
+                    Hemen ücretsiz hesap oluştur, taktik ilanları listele veya alışverişe başla.
+                </p>
+            </div>
+
+            <form class="mt-8 space-y-6" action="#" method="POST">
+                <div class="space-y-5">
+                    
+                    <div>
+                        <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Ad Soyad</label>
+                        <div class="relative rounded-lg shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+                                <i class="fa-regular fa-user"></i>
+                            </div>
+                            <input type="text" name="name" id="name" required 
+                                class="block w-full pl-10 pr-4 py-3 bg-inputBg border border-gray-800 rounded-lg text-sm text-white placeholder-gray-600 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" 
+                                placeholder="Adınızı ve soyadınızı giriniz">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">E-posta Adresi</label>
+                        <div class="relative rounded-lg shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <input type="email" name="email" id="email" required 
+                                class="block w-full pl-10 pr-4 py-3 bg-inputBg border border-gray-800 rounded-lg text-sm text-white placeholder-gray-600 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" 
+                                placeholder="ornek@airsoft.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Şifre</label>
+                        <div class="relative rounded-lg shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            <input type="password" name="password" id="password" required 
+                                class="block w-full pl-10 pr-4 py-3 bg-inputBg border border-gray-800 rounded-lg text-sm text-white placeholder-gray-600 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" 
+                                placeholder="••••••••">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="password-confirm" class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Şifre Tekrar</label>
+                        <div class="relative rounded-lg shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <input type="password" name="password-confirm" id="password-confirm" required 
+                                class="block w-full pl-10 pr-4 py-3 bg-inputBg border border-gray-800 rounded-lg text-sm text-white placeholder-gray-600 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" 
+                                placeholder="••••••••">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="flex items-start mt-4">
+                    <div class="flex items-center h-5">
+                        <input id="terms" name="terms" type="checkbox" required class="w-4 h-4 bg-inputBg border-gray-800 rounded text-accent focus:ring-offset-dark focus:ring-accent accent-accent">
+                    </div>
+                    <div class="ml-3 text-xs">
+                        <label for="terms" class="text-gray-400">
+                            <a href="#" class="text-accent hover:underline">Kullanım Şartları</a> ve <a href="#" class="text-accent hover:underline">Gizlilik Politikası</a>'nı okudum, kabul ediyorum.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full flex justify-center py-3.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-dark bg-accent hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark focus:ring-accent transition-all uppercase tracking-wider">
+                        Hesap Oluştur
+                    </button>
+                </div>
+            </form>
+
+            <div class="text-center pt-2">
+                <p class="text-sm text-gray-400">
+                    Zaten üye misiniz? 
+                    <a href="#" class="font-semibold text-accent hover:text-white transition-colors ml-1">Giriş Yapın</a>
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark text-gray-400 py-12 border-t border-gray-900 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-crosshairs text-accent text-xl"></i>
+                        <span class="text-lg font-bold tracking-wider text-white">AIRSOFT<span class="text-accent">SATIS</span></span>
+                    </div>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Türkiye'nin en aktif 2. el airsoft ekipman ve replika alışveriş platformu. Taktiksel güvenli ticaret.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm">Kurumsal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="hakkimizda.html" class="hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="topluluk.html" class="hover:text-white transition-colors">Topluluk Kuralları</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Güvenli Ticaret</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm">Popüler İlanlar</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="ilanlar.html" class="hover:text-white transition-colors">Replika İlanları</a></li>
+                        <li><a href="ilanlar.html" class="hover:text-white transition-colors">Taktik Ekipmanlar</a></li>
+                        <li><a href="topluluk.html" class="hover:text-white transition-colors">Topluluğumuz</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm">Sosyal Medya</h4>
+                    <div class="flex space-x-4 text-gray-400 text-base">
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+                <p>&copy; 2026 AirsoftSatis. Tüm Hakları Saklıdır. | Güvenli Alışveriş Platformu</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
